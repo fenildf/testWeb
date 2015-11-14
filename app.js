@@ -1,5 +1,5 @@
 (function(){
-	var app=angular.module('app-header', ['app-body']);
+	var app=angular.module('app-header', ['app-body','app-footer']);
 	//app.controller();
 	app.directive('headerApp', function(){
 		return {
