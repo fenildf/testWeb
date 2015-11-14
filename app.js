@@ -1,9 +1,9 @@
 (function(){
-	var app=angular.module('app', []);
+	var app=angular.module('app-header', ['app-body']);
 	//app.controller();
-	app.directive('header', function(){
+	app.directive('headerApp', function(){
 		return {
-			restrict: 'E',
+			restrict: 'A',
 			templateUrl: 'header.html',
 			controller: function(){
 				/*
