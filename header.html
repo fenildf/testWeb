@@ -1,10 +1,19 @@
 <link rel="stylesheet" href="css/headerform.css">
 <div>
-	<form name="thisform" ng-hide="headerCtrl.isLogin" ng-submit="thisform.$valid && headerCtrl.Login(headerCtrl.user,headerCtrl.pw,headerCtrl.email)" novalidate>
+	<form name="thisform" class="form-horizontal" ng-hide="headerCtrl.isLogin || headerCtrl.goRegister" ng-submit="thisform.$valid && headerCtrl.Login(user)" novalidate>
 	<!-- Review ng-class to change css -->
-	Username: <input type="text" ng-model="headerCtrl.user" required> <br>
-	Passward: <input type="passward" ng-model="headerCtrl.pw" required> <br>
-	E-mail:   <input type="email" ng-model="headerCtrl.email" required> <br>
-	<input type="submit">
+	Username: <input type="text" ng-model="user.name" required> <br>
+	Passward: <input type="password" ng-model="user.pw" required> <br>
+	<input type="submit" class="btn btn-sm btn-default" id="Idsubmit">
+	</form>
+
+	<!-- review ng-model -->
+	<button ng-click="headerCtrl.setgoRegister()" class="btn btn-lg btn-default">Go Register? {{headerCtrl.goRegister}}</button>
+
+	<form name="thisform" class="form-horizontal" ng-show="headerCtrl.goRegister" ng-submit="thisform.$valid && headerCtrl.register(user)" novalidate>
+		Username: <input type="text" ng-model="user.name" required></input> <br>
+		Password: <input type="password" ng-model="user.pw" required></input> <br>
+		E-mail:<input type="email" ng-model="user.email" required></input> <br>
+	<input type="submit" class="btn btn-sm btn-default" id="Idsubmit">
 	</form>
 </div>

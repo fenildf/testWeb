@@ -12,18 +12,21 @@
 				 *
 				 */
 				var THIS=this;
-				THIS.user='';
-				THIS.pw='';
 				THIS.isLogin=false;
+				THIS.goRegister=false;
 				THIS.setLogin=function(is){
 					THIS.isLogin=is;
 				};
-				THIS.Login=function(user,pw){
+				THIS.Login=function(userobj){
 					/*
-					 *
 					 * Things to do...
 					 *
+					 * userobj.name
+					 *        .pw
 					 */
+				};
+				THIS.setgoRegister=function(){
+					THIS.goRegister=!THIS.goRegister;
 				};
 			},
 			controllerAs: 'headerCtrl'
